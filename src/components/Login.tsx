@@ -22,7 +22,7 @@ const Login = () => {
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: getURL() + 'admin',
+          redirectTo: process?.env?.NEXT_PUBLIC_VERCEL_URL + 'admin',
         },
       })
       console.log(data)
