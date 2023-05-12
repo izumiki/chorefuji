@@ -1,5 +1,5 @@
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
-import { Button, Icon } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react'
 
 const Login = () => {
   const supabase = useSupabaseClient()
