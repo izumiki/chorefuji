@@ -22,7 +22,7 @@ const Login = () => {
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: process?.env?.NEXT_PUBLIC_VERCEL_URL + 'admin',
+          redirectTo: 'https://chorefuji.vercel.app/' + 'admin',
         },
       })
       console.log(data)
