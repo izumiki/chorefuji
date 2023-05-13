@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // reactStrictMode: true,
+  reactStrictMode: true,
   // webpack5: false,
   images: {
     domains: ['absiihcbznkwzobksvco.supabase.co'],
+  },
+  experimental: {
+    appDir: true,
   },
   // experimental: {
   //   fontLoaders: [

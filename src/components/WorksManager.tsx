@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Database } from '../types/database.types'
+import { Database } from '../lib/database.types'
 import {
   Session,
   SupabaseClient,

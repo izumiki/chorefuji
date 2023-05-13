@@ -6,7 +6,7 @@ import { ProfileFormValues } from './ProfileManager'
 import { UseFormRegister, UseFormSetValue } from 'react-hook-form'
 import CropModal from './CropModal'
 
-export type AvatarProps = {
+export type AvatarManagerProps = {
   avatarSrc: string | null | undefined
   avatarSide: number
   // setAvatarSrc: () => void
@@ -22,7 +22,12 @@ export type AvatarImage = {
   height: number
 }
 
-const Avatar = ({ avatarSrc, avatarSide, register, setValue }: AvatarProps) => {
+const AvatarManager = ({
+  avatarSrc,
+  avatarSide,
+  register,
+  setValue,
+}: AvatarManagerProps) => {
   const [src, setSrc] = useState<string>(avatarSrc || '')
   const [newSrc, setNewSrc] = useState<string>(avatarSrc || '')
   const [img, setImg] = useState<Blob | File>()
@@ -157,4 +162,4 @@ const Avatar = ({ avatarSrc, avatarSide, register, setValue }: AvatarProps) => {
   )
 }
 
-export default Avatar
+export default AvatarManager

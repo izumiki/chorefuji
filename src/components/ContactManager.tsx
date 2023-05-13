@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Session, SupabaseClient, User } from '@supabase/supabase-js'
 import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react'
-import { Database } from '../types/database.types'
+import { Database } from '../lib/database.types'
 import { useForm } from 'react-hook-form'
 import ContactFormCheckbox from './ContactFormCheckbox'
 import ContactFormInput from './ContactFormInput'

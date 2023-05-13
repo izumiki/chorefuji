@@ -1,4 +1,4 @@
-import { Database } from '../types/database.types'
+import { Database } from '../lib/database.types'
 import React, { useState } from 'react'
 import {
   SupabaseClient,
