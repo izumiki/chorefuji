@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
-import TwitterIcon from '../../public/Twitter social icons - circle - blue.svg'
-import TumblrIcon from '../../public/Tumblr_Logos_2018.03.06_Android Icon Blue.png'
-import PixivIcon from '../../public/logo_icon_r.png'
-import SkebIcon from '../../public/icon.svg'
+import TwitterIcon from '../../public/images/Twitter social icons - circle - blue.svg'
+import TumblrIcon from '../../public/images/Tumblr_Logos_2018.03.06_Android Icon Blue.png'
+import PixivIcon from '../../public/images/logo_icon_r.png'
+import SkebIcon from '../../public/images/icon.svg'
 
 type LinksProps = {
   twitterUrl: string | null
