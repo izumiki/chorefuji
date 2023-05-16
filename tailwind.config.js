@@ -27,7 +27,7 @@ module.exports = {
         uSusutake: '0px 5px 0px rgba(107, 81, 70, 0.5)',
       },
       backgroundImage: {
-        'sakura-pattern': "url('../img/japaper.svg')",
+        'sakura-pattern': "url('/images/japaper.svg')",
       },
     },
   },

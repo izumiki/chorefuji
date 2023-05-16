@@ -16,34 +16,31 @@ const Profile = ({ accounts, works }: Profileprops) => {
   if (accounts === null) return <div>not avatar</div>
   else
     return (
-      <div className='flex h-screen w-screen flex-col items-center text-susutake'>
+      <div className='flex w-screen flex-col items-center text-susutake'>
         <Header name='Profile' />
-        <div className='flex w-screen flex-col justify-center lg:w-[960px] lg:flex-row 3xl:w-[1600px]'>
-          <div className='drop-shadow-uSusutake md:h-3/4 lg:h-screen lg:drop-shadow-urSusutake'>
+        <div className='flex w-screen flex-col xl:w-[1280px] xl:flex-row 3xl:w-[1600px] '>
+          <div className='md:h-3/4 xl:mt-9 xl:h-[screen] xl:w-1/2 '>
             <Image
               src='/images/profile_image.png'
-              width={960}
-              height={960}
+              width={1500}
+              height={1500}
               alt='profile image'
-              priority={true}
-              className='w-screen object-cover object-top md:h-[75vw] lg:h-[480px] lg:w-[480px] 3xl:h-[800px]  3xl:w-[800px]'
+              // priority={true}
+              sizes='(max-width: 1024px) 100vw, 50vw'
+              className='object-cover object-top drop-shadow-uSusutake  md:h-[75vw] xl:h-[600px] xl:w-[600px] xl:drop-shadow-urSusutake 3xl:h-[720px]  3xl:w-[720px]'
             />
           </div>
 
-          <div className='mt-12 flex flex-col items-center gap-6 text-center text-sm  md:text-xl  lg:w-1/2 3xl:gap-12'>
-            <div className='flex flex-row items-center justify-between gap-9 md:gap-12 3xl:text-3xl'>
+          <div className='my-6 flex flex-col items-center gap-4 text-sm  md:text-xl xl:w-1/2 xl:gap-6 3xl:gap-9'>
+            <div className='flex flex-row items-center justify-between gap-9 md:gap-12 xl:gap-[72px]'>
               <Avatar avatarUrl={accounts.avatar_url} />
-              <div className='text-3xl md:text-4xl 3xl:text-6xl'>
+              <div className='text-3xl md:text-4xl xl:text-5xl 3xl:text-7xl'>
                 {accounts.username}
               </div>
             </div>
-            <div className=' flex w-screen flex-col items-center justify-center gap-4 md:gap-6'>
-              <div className='w-full whitespace-pre-line '>
-                {accounts.profile}
-              </div>
-              <div className='w-screen '>
-                使用ソフト：{accounts.software_used}
-              </div>
+            <div className=' flex flex-col items-center justify-center gap-4 xl:gap-6 xl:text-2xl 3xl:gap-9 3xl:text-3xl'>
+              <div className='whitespace-pre-line'>{accounts.profile}</div>
+              <div>使用ソフト：{accounts.software_used}</div>
               <WorksList works={works} />
               <Links
                 twitterUrl={accounts.twitter_url}

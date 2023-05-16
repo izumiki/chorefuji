@@ -3,6 +3,7 @@
   "plugins": ["prettier"],
   "ignorePatterns": ["*.config.js"],
   "rules": {
+    "react-hooks/exhaustive-deps": "off",
     "prettier/prettier": "error"
   }
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
-import { useSupabase } from '../app/supabase-provider'
+import { useSupabase } from '../../app/supabase-provider'
 import { Icon } from 'semantic-ui-react'
 
 const Login = () => {
@@ -25,7 +25,7 @@ const Login = () => {
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: getURL() + 'admin',
+          redirectTo: 'https://chorefuji.vercel.app/admin',
         },
       })
       console.log(data)

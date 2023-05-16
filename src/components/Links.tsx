@@ -19,9 +19,9 @@ const Links = ({
   iconSize,
 }: LinksProps) => {
   return (
-    <div className='flex w-full flex-row items-center justify-center gap-6 md:gap-9 lg:gap-12'>
+    <div className='flex w-full flex-row items-center justify-center gap-6 md:gap-9 xl:gap-12'>
       {twitterUrl !== null && (
-        <div className='flex w-6  flex-row md:w-9 lg:w-16'>
+        <div className='flex w-6  flex-row md:w-9 xl:w-12 3xl:w-16'>
           <a href={twitterUrl} target='_blank'>
             <Image
               src={TwitterIcon}
@@ -33,7 +33,7 @@ const Links = ({
         </div>
       )}
       {tumblrUrl !== null && (
-        <div className='flex  w-6  flex-row md:w-9 lg:w-16'>
+        <div className='flex  w-6  flex-row md:w-9 xl:w-12 3xl:w-16'>
           <a href={tumblrUrl} target='_blank'>
             <Image
               src='/Tumblr_Logos_2018.03.06_Android Icon Blue.png'
@@ -45,7 +45,7 @@ const Links = ({
         </div>
       )}
       {pixivUrl !== null && (
-        <div className='flex  w-6  flex-row md:w-9 lg:w-16'>
+        <div className='flex  w-6  flex-row md:w-9 xl:w-12 3xl:w-16'>
           <a href={pixivUrl} target='_blank'>
             <Image
               src='/logo_icon_r.png'
@@ -57,7 +57,7 @@ const Links = ({
         </div>
       )}
       {skebUrl !== null && (
-        <div className='flex  w-6  flex-row rounded-full md:w-9 lg:w-16'>
+        <div className='flex  w-6  flex-row rounded-full md:w-9 xl:w-12 3xl:w-16'>
           <a href={skebUrl} target='_blank'>
             <Image
               src={SkebIcon}

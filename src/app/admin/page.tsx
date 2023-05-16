@@ -1,7 +1,7 @@
 'use client'
 
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
-import Login from '../../components/Login'
+import Login from '../../components/admin/Login'
 import Account from '../../components/admin/Account'
 
 const Admin = () => {
