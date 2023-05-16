@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint --dir src",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
-    "update-types": "npx supabase gen types typescript --linked --schema public > src/types/database.types.ts"
+    "update-types": "npx supabase gen types typescript --linked --schema public > src/lib/database.types.ts"
   },
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "^0.6.1",

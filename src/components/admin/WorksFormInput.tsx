@@ -2,7 +2,7 @@ import React from 'react'
 import { FieldErrors, UseFormRegister } from 'react-hook-form'
 import { RegisterOptions } from 'react-hook-form'
 
-import { WorkFormValues } from './WorksList'
+import { WorkFormValues } from './WorksEditor'
 
 export type WorksFormInputProps = {
   label: string

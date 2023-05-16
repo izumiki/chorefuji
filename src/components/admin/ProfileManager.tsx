@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Session, SupabaseClient, User } from '@supabase/supabase-js'
 import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react'
-import { Database } from '../lib/database.types'
+import { Database } from '../../lib/database.types'
 import { createPath, uploadStorage } from './uploadStorage'
 import ProfileFormInput from './ProfileFormInput'
 import { useForm } from 'react-hook-form'

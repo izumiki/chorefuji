@@ -7,7 +7,7 @@ import {
   useSupabaseClient,
   useUser,
 } from '@supabase/auth-helpers-react'
-import WorksList from './WorksList'
+import WorksList from './WorksEditor'
 import WorksRegister from './WorksRegister'
 import { Button, Header, Icon } from 'semantic-ui-react'
 import ReactModal from 'react-modal'
