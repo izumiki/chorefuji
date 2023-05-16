@@ -6,7 +6,6 @@ import Account from '../../components/admin/Account'
 
 const Admin = () => {
   const session = useSession()
-  const supabase = useSupabaseClient()
   return <div>{!session ? <Login /> : <Account session={session} />}</div>
 }
 

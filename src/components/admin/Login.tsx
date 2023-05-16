@@ -1,11 +1,11 @@
 'use client'
 
-import { useSupabaseClient } from '@supabase/auth-helpers-react'
+import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { useSupabase } from '../../app/supabase-provider'
-import { Icon } from 'semantic-ui-react'
+// import { Button, Icon } from 'semantic-ui-react'
 
 const Login = () => {
-  const { supabase } = useSupabase()
+  const supabase = createBrowserSupabaseClient()
 
   const getURL = () => {
     let url =
@@ -32,6 +32,7 @@ const Login = () => {
       console.error(error)
       if (error) throw error
     } catch (error) {
+      alert(error)
       console.error(error)
     }
   }
@@ -40,9 +41,10 @@ const Login = () => {
     <div className='flex w-full flex-col items-center justify-center p-6'>
       <button
         className='flex h-16 w-64 items-center justify-center rounded-full bg-teal-500 font-bold text-white hover:bg-teal-600'
+        // color='teal'
         onClick={() => loginWithGoogle()}
       >
-        <Icon name='google' />
+        {/* <Icon name='google' /> */}
         <span className='p-2 text-base'> Google を使ってログイン </span>
       </button>
     </div>

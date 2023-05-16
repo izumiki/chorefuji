@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Profile from '@/components/Profile'
+import Login from '@/components/admin/Login'
 import { Database } from '@/lib/database.types'
 import { createServerComponentSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { headers, cookies } from 'next/headers'
@@ -35,6 +36,7 @@ export default async function Home() {
   return (
     <main className='flex h-full w-full flex-col items-center justify-between'>
       <Profile accounts={profile} works={works} />
+      <Login />
     </main>
   )
 }
