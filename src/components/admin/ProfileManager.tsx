@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from 'react'
 import { Session, SupabaseClient, User } from '@supabase/supabase-js'
 import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react'
@@ -10,6 +11,7 @@ import AvatarManager from './AvatarManager'
 import AccountButton from './AccountButton'
 import { Header } from 'semantic-ui-react'
 import deleteStorage from './deleteStorage'
+import { useSupabase } from '@/app/supabase-provider'
 
 type Accounts = Database['public']['Tables']['accounts']['Row']
 
@@ -26,9 +28,9 @@ export type ProfileFormValues = {
   avatarImage: Blob | File | null
 }
 
-const ProfileManager = ({ session }: { session: Session }) => {
-  const supabase: SupabaseClient<Database> = useSupabaseClient<Database>()
-  const user: User | null = useUser()
+const ProfileManager = ({ user }: { user: User }) => {
+  const { supabase }: { supabase: SupabaseClient<Database> } = useSupabase()
+  // const user: User | null = supabase.auth.getUser()
   const [account, setAccount] = useState<Accounts>()
   const [loading, setLoading] = useState<boolean>(true)
   const [completed, setIsCompleted] = useState<boolean>(false)
@@ -36,9 +38,13 @@ const ProfileManager = ({ session }: { session: Session }) => {
   const { register, handleSubmit, formState, setValue } =
     useForm<ProfileFormValues>()
 
+  // useEffect(() => {
+  //   if (user) console.log(user)
+  // }, [user])
+
   useEffect(() => {
-    if (session) fetchAccount()
-  }, [session])
+    if (user) fetchAccount()
+  }, [])
 
   useEffect(() => {
     if (account) {

@@ -2,33 +2,20 @@
 
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { useSupabase } from '../../app/supabase-provider'
-// import { Button, Icon } from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 
 const Login = () => {
-  const supabase = createBrowserSupabaseClient()
-
-  const getURL = () => {
-    let url =
-      process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
-      process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
-      'http://localhost:3000/'
-    // Make sure to include `https://` when not localhost.
-    url = url.includes('http') ? url : `https://${url}`
-    // Make sure to including trailing `/`.
-    url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
-    console.log(url)
-    return url
-  }
+  const { supabase } = useSupabase()
 
   const loginWithGoogle = async () => {
     try {
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: 'https://chorefuji.vercel.app/admin',
+          redirectTo: 'http://chorefuji.vercel.app/admin',
         },
       })
-      console.log(data)
+      console.log('data', data)
       console.error(error)
       if (error) throw error
     } catch (error) {
@@ -44,7 +31,7 @@ const Login = () => {
         // color='teal'
         onClick={() => loginWithGoogle()}
       >
-        {/* <Icon name='google' /> */}
+        <Icon name='google' />
         <span className='p-2 text-base'> Google を使ってログイン </span>
       </button>
     </div>

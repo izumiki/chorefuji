@@ -1,5 +1,5 @@
 import { Cinzel, Zen_Kurenaido } from 'next/font/google'
-import '../styles/globals.css'
+import './globals.css'
 import SupabaseProvider from './supabase-provider'
 
 export const metadata = {

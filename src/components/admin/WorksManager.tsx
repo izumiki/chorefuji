@@ -13,21 +13,24 @@ import { Button, Header, Icon } from 'semantic-ui-react'
 import ReactModal from 'react-modal'
 import AccountButton from './AccountButton'
 import WorksDeleteModal from './WorksDeleteModal'
+import { useSupabase } from '@/app/supabase-provider'
 export type Works = Database['public']['Tables']['works']['Row']
 
-const WorksManager = ({ session }: { session: Session }) => {
-  const [loading, setLoading] = useState<boolean>(true)
-  const supabase: SupabaseClient<Database> = useSupabaseClient<Database>()
-  const user: User | null = useUser()
+const WorksManager = ({ user }: { user: User }) => {
+  const { supabase }: { supabase: SupabaseClient<Database> } = useSupabase()
+
+  // const supabase: SupabaseClient<Database> = useSupabaseClient<Database>()
+  // const user: User | null = useUser()
   const [works, setWorks] = useState<Works[]>()
   const [isRegister, setIsRegister] = useState<boolean>(true)
   const [worksIndex, setWorksIndex] = useState<number>(0)
   const [maxIndex, setMaxIndex] = useState<number>(0)
+  const [loading, setLoading] = useState<boolean>(true)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   useEffect(() => {
-    if (session) fetchWorks()
-  }, [session])
+    if (user) fetchWorks()
+  }, [])
 
   useEffect(() => {
     setLoading(true)

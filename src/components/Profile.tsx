@@ -22,11 +22,11 @@ const Profile = ({ accounts, works }: Profileprops) => {
           <div className='md:h-3/4 xl:mt-9 xl:h-[screen] xl:w-1/2 '>
             <Image
               src='/images/profile_image.png'
-              width={1500}
-              height={1500}
+              width={1280}
+              height={1280}
               alt='profile image'
-              // priority={true}
-              sizes='(max-width: 1024px) 100vw, 50vw'
+              priority={true}
+              sizes='(max-width: 1280px) 100vw, 50vw'
               className='object-cover object-top drop-shadow-uSusutake  md:h-[75vw] xl:h-[600px] xl:w-[600px] xl:drop-shadow-urSusutake 3xl:h-[720px]  3xl:w-[720px]'
             />
           </div>

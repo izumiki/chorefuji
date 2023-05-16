@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form'
 import ContactFormCheckbox from './ContactFormCheckbox'
 import ContactFormInput from './ContactFormInput'
 import AccountButton from './AccountButton'
+import { useSupabase } from '@/app/supabase-provider'
 
 type Contacts = Database['public']['Tables']['contacts']['Row']
 
@@ -16,9 +17,10 @@ export type ContactFormValues = {
   replyDeadline: string | null
 }
 
-const ContactManager = ({ session }: { session: Session }) => {
-  const supabase: SupabaseClient<Database> = useSupabaseClient<Database>()
-  const user: User | null = useUser()
+const ContactManager = ({ user }: { user: User }) => {
+  const { supabase }: { supabase: SupabaseClient<Database> } = useSupabase()
+
+  // const user: User | null = useUser()
   const [contact, setContact] = useState<Contacts>()
   const [isChecked, setIsChecked] = useState<boolean>(true)
   const [loading, setLoading] = useState<boolean>(false)
@@ -28,8 +30,8 @@ const ContactManager = ({ session }: { session: Session }) => {
     useForm<ContactFormValues>()
 
   useEffect(() => {
-    if (session) fetchContact()
-  }, [session])
+    if (user) fetchContact()
+  }, [user])
 
   useEffect(() => {
     if (contact) {
