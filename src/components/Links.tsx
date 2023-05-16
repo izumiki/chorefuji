@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
 import TwitterIcon from '../../public/Twitter social icons - circle - blue.svg'
+import TumblrIcon from '../../public/Tumblr_Logos_2018.03.06_Android Icon Blue.png'
+import PixivIcon from '../../public/logo_icon_r.png'
 import SkebIcon from '../../public/icon.svg'
 
 type LinksProps = {
@@ -36,7 +38,7 @@ const Links = ({
         <div className='flex  w-6  flex-row md:w-9 xl:w-12 3xl:w-16'>
           <a href={tumblrUrl} target='_blank'>
             <Image
-              src='/Tumblr_Logos_2018.03.06_Android Icon Blue.png'
+              src={TumblrIcon}
               width={iconSize}
               height={iconSize}
               alt='tumblr'
@@ -48,7 +50,7 @@ const Links = ({
         <div className='flex  w-6  flex-row md:w-9 xl:w-12 3xl:w-16'>
           <a href={pixivUrl} target='_blank'>
             <Image
-              src='/logo_icon_r.png'
+              src={PixivIcon}
               width={iconSize}
               height={iconSize}
               alt='pixiv'
