@@ -11,8 +11,9 @@ const Avatar = ({ avatarUrl }: { avatarUrl: string | null }) => {
       <Image
         src={avatarUrl}
         alt='avatar'
-        width={384}
-        height={384}
+        width={192}
+        height={192}
+        priority={true}
         className='h-24 w-24 rounded-full border-2 border-susutake md:h-36 md:w-36 3xl:h-48 3xl:w-48'
       />
     </div>

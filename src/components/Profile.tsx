@@ -8,16 +8,18 @@ import Avatar from './Avatar'
 
 type Accounts = Database['public']['Tables']['accounts']['Row']
 type Works = Database['public']['Tables']['works']['Row']
-type Profileprops = {
+
+export type Profileprops = {
   accounts: Accounts
   works: Works[]
 }
+
 const Profile = ({ accounts, works }: Profileprops) => {
   if (accounts === null) return <div>not avatar</div>
   else
     return (
-      <div className='flex w-screen flex-col items-center text-susutake'>
-        <Header name='Profile' />
+      <div className='flex h-screen w-screen flex-col items-center text-susutake'>
+        {/* <Header name='Profile' /> */}
         <div className='flex w-screen flex-col xl:w-[1280px] xl:flex-row 3xl:w-[1600px] '>
           <div className='md:h-3/4 xl:mt-9 xl:h-[screen] xl:w-1/2 '>
             <Image
