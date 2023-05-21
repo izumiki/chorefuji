@@ -18,7 +18,7 @@ const Profile = ({ accounts, works }: Profileprops) => {
   if (accounts === null) return <div>not avatar</div>
   else
     return (
-      <div className='flex h-screen w-screen flex-col items-center text-susutake'>
+      <div className='flex w-screen flex-col items-center text-susutake'>
         {/* <Header name='Profile' /> */}
         <div className='flex w-screen flex-col xl:w-[1280px] xl:flex-row 3xl:w-[1600px] '>
           <div className='md:h-3/4 xl:mt-9 xl:h-[screen] xl:w-1/2 '>
@@ -41,16 +41,20 @@ const Profile = ({ accounts, works }: Profileprops) => {
               </div>
             </div>
             <div className=' flex flex-col items-center justify-center gap-4 xl:gap-6 xl:text-2xl 3xl:gap-9 3xl:text-3xl'>
-              <div className='whitespace-pre-line'>{accounts.profile}</div>
-              <div>使用ソフト：{accounts.software_used}</div>
-              <WorksList works={works} />
-              <Links
-                twitterUrl={accounts.twitter_url}
-                tumblrUrl={accounts.tumblr_url}
-                pixivUrl={accounts.pixiv_url}
-                skebUrl={accounts.skeb_url}
-                iconSize={64}
-              />
+              <div className='flex whitespace-pre-line'>{accounts.profile}</div>
+              <div className='flex'>使用ソフト：{accounts.software_used}</div>
+              <div className='flex'>
+                <WorksList works={works} />
+              </div>
+              <div className='flex'>
+                <Links
+                  twitterUrl={accounts.twitter_url}
+                  tumblrUrl={accounts.tumblr_url}
+                  pixivUrl={accounts.pixiv_url}
+                  skebUrl={accounts.skeb_url}
+                  iconSize={64}
+                />
+              </div>
             </div>
           </div>
         </div>

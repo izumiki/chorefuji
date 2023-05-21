@@ -42,7 +42,7 @@ export default async function Home() {
     )
 
   return (
-    <main className='flex h-full w-full flex-col items-center justify-between'>
+    <main className='flex w-full flex-col items-center justify-center space-y-36'>
       {/* <Header /> */}
       <Profile accounts={profile} works={works} />
       <Contact contact={contacts} skebUrl={profile.skeb_url || ''} />

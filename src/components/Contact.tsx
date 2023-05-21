@@ -22,9 +22,21 @@ const Contact = ({ contact, skebUrl }: Contactprops) => {
   )
   console.log('date', date)
   return (
-    <div className='flex flex-col items-center text-susutake 3xl:w-[1600px]'>
+    <div className='flex w-screen flex-col items-center text-susutake xl:flex-row 3xl:w-[1600px]'>
       {/* <Header name='Contact' /> */}
-      <div className='flex w-screen flex-col items-center justify-between p-4 xl:w-[1280px] xl:flex-row 3xl:w-[1600px]'>
+      <div className='mt-6 md:h-3/4 xl:h-[screen] xl:w-1/2 '>
+        <Image
+          src='/images/contact_image.jpg'
+          width={1280}
+          height={1280}
+          alt='contact image'
+          // priority={true}
+          sizes='(max-width: 1280px) 100vw, 50vw'
+          className='object-cover object-top drop-shadow-uSusutake  md:h-[75vw] xl:h-[600px] xl:w-[600px] xl:drop-shadow-urSusutake 3xl:h-[720px]  3xl:w-[720px]'
+        />
+      </div>
+      
+      <div className='flex w-screen flex-col items-center justify-between p-4 xl:w-[640px] xl:flex-row 3xl:w-[800px]'>
         <div className='flex w-full flex-col text-sm md:w-[480px] md:text-xl xl:w-[720px] xl:text-2xl'>
           <p className='flex w-full flex-col  whitespace-pre-wrap text-left'>
             {'現在、企業様のご依頼を募集しています。'}
@@ -53,17 +65,6 @@ const Contact = ({ contact, skebUrl }: Contactprops) => {
               {'にて承っております。'}
             </span>
           </p>
-        </div>
-        <div className='mt-6 md:h-3/4 xl:h-[screen] xl:w-1/2 '>
-          <Image
-            src='/images/contact_image.jpg'
-            width={1280}
-            height={1280}
-            alt='contact image'
-            // priority={true}
-            sizes='(max-width: 1280px) 100vw, 50vw'
-            className='object-cover object-top drop-shadow-uSusutake  md:h-[75vw] xl:h-[600px] xl:w-[600px] xl:drop-shadow-urSusutake 3xl:h-[720px]  3xl:w-[720px]'
-          />
         </div>
       </div>
     </div>
