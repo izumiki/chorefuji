@@ -35,7 +35,7 @@ const Contact = ({ contact, skebUrl }: Contactprops) => {
           className='object-cover object-top drop-shadow-uSusutake  md:h-[75vw] xl:h-[600px] xl:w-[600px] xl:drop-shadow-urSusutake 3xl:h-[720px]  3xl:w-[720px]'
         />
       </div>
-      
+
       <div className='flex w-screen flex-col items-center justify-between p-4 xl:w-[640px] xl:flex-row 3xl:w-[800px]'>
         <div className='flex w-full flex-col text-sm md:w-[480px] md:text-xl xl:w-[720px] xl:text-2xl'>
           <p className='flex w-full flex-col  whitespace-pre-wrap text-left'>
