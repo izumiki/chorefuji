@@ -1,4 +1,4 @@
-import { Cinzel, Zen_Kurenaido } from 'next/font/google'
+import { Cinzel, Zen_Kurenaido, Klee_One, Alegreya } from 'next/font/google'
 import './globals.css'
 import SupabaseProvider from './supabase-provider'
 
@@ -14,10 +14,23 @@ const ZenKurenaido = Zen_Kurenaido({
   display: 'swap',
 })
 
+const KleeOne = Klee_One({
+  weight: ['400', '600'],
+  style: ['normal'],
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 const cinzel = Cinzel({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-cinzel',
+})
+
+const alegreya = Alegreya({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-alegreya',
 })
 
 export default async function RootLayout({
@@ -28,7 +41,7 @@ export default async function RootLayout({
   return (
     <html
       lang='jp'
-      className={`${cinzel.variable} ${ZenKurenaido.className} h-screen w-screen bg-sakura-pattern bg-repeat`}
+      className={`${cinzel.variable} ${alegreya.variable} ${ZenKurenaido.className} ${KleeOne.className} h-screen w-screen bg-sakura-pattern bg-repeat`}
     >
       <body>
         <SupabaseProvider>{children}</SupabaseProvider>

@@ -14,13 +14,16 @@ module.exports = {
       fontFamily: {
         ZenKrenaido: ['var(--font-ZenKrenaido)'],
         Cinzel: ['var(--font-cinzel)'],
-        Murecho: ['var(--font-Murecho)'],
+        Alegreya: ['var(--font-alegreya)'],
+        KleeOne: ['var(--font-KleeOne)'],
+        Mailform: ['var(--font-alegreya)', 'var(--font-KleeOne)'],
       },
       colors: {
         susutake: '#6b5146',
+        suou: { DEFAULT: '#9e3d3e', dark: '#5a2323' },
       },
-      width: {
-        200: '200rem',
+      spacing: {
+        15: '3.75rem',
       },
       dropShadow: {
         urSusutake: '10px 10px 0px rgba(107, 81, 70, 0.5)',
@@ -28,6 +31,11 @@ module.exports = {
       },
       backgroundImage: {
         'sakura-pattern': "url('/images/japaper.svg')",
+      },
+      listStyleType: {
+        none: 'none',
+        disc: 'disc',
+        circle: 'circle',
       },
     },
   },

@@ -1,4 +1,6 @@
+import Contact from '@/components/Contact'
 import Header from '@/components/Header'
+import MailForm from '@/components/Mailform'
 import Profile from '@/components/Profile'
 import Login from '@/components/admin/Login'
 import { Database } from '@/lib/database.types'
@@ -24,7 +26,13 @@ export default async function Home() {
     .eq('email', email)
     .order('created_at', { ascending: false })
 
-  if (profile === null || works === null)
+  const { data: contacts } = await supabase
+    .from('contacts')
+    .select('*')
+    .eq('email', email)
+    .single()
+
+  if (profile === null || works === null || contacts === null)
     return (
       <main className='flex min-h-screen flex-col items-center justify-between p-24'>
         <div className='mt-12 flex h-full w-full justify-center text-3xl'>
@@ -35,7 +43,10 @@ export default async function Home() {
 
   return (
     <main className='flex h-full w-full flex-col items-center justify-between'>
+      {/* <Header /> */}
       <Profile accounts={profile} works={works} />
+      <Contact contact={contacts} skebUrl={profile.skeb_url || ''} />
+      <MailForm />
       {/* <div> */}
       {/* <Account /> */}
       {/* </div> */}
