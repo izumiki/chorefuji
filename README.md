@@ -34,6 +34,9 @@ Atomic DesignをベースにUIの基本単位を決めて設計し、コンポ�
 
 また、後からのデザインや仕様の変更にも大元のコンポーネントを変更することで柔軟に対応できます。
 
+# Webページ
+現在開発途中です。
+[https://chorefuji.vercel.app/](https://chorefuji.vercel.app/)
 <!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
